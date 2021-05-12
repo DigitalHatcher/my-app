@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import ExpenseList from "./components/Expenses/ExpenseList";
 import React from "react";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -31,18 +32,18 @@ const App = () => {
     },
   ];
 
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h2", {}, "Let's get started!"),
-    React.createElement(ExpenseList, { expenseList: expenses })
-  );
-  //return (
-  //  <div>
-  //    <h2>Let's get started</h2>
-  //    <ExpenseList expenseList={expenses}></ExpenseList>
-  //  </div>
+  //return React.createElement(
+  //  "div",
+  //  {},
+  //  React.createElement("h2", {}, "Let's get started!"),
+  //  React.createElement(ExpenseList, { expenseList: expenses })
   //);
+  return (
+    <div>
+      <NewExpense></NewExpense>
+      <ExpenseList expenseList={expenses}></ExpenseList>
+    </div>
+  );
 };
 
 export default App;
