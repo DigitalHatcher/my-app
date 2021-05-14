@@ -1,8 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from "./components/Expenses/ExpenseList";
+import React from "react";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -30,14 +32,23 @@ function App() {
     },
   ];
 
+  //return React.createElement(
+  //  "div",
+  //  {},
+  //  React.createElement("h2", {}, "Let's get started!"),
+  //  React.createElement(ExpenseList, { expenseList: expenses })
+  //);
+  const addExpenseHandeller = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   return (
-    <div className="App">
-      <div>
-        <h2>Let's get started</h2>
-        <ExpenseList expenseList={expenses}></ExpenseList>
-      </div>
+    <div>
+      <NewExpense onAddExpense={addExpenseHandeller}></NewExpense>
+      <ExpenseList expenseList={expenses}></ExpenseList>
     </div>
   );
-}
+};
 
 export default App;
