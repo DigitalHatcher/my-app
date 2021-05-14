@@ -16,11 +16,11 @@ const ExpenseList = (props) => {
 
   return (
     <div>
-      <ExpensesFilter
-        selected={enteredFilter}
-        onChangeFilterData={changeFilterHandeller}
-      ></ExpensesFilter>
       <Card className="expense-list">
+        <ExpensesFilter
+          selected={enteredFilter}
+          onChangeFilterData={changeFilterHandeller}
+        ></ExpensesFilter>
         <ExpenseItem
           title={props.expenseList[0].title}
           amount={props.expenseList[0].amount}
